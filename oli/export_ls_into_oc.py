@@ -9,7 +9,7 @@ import json
 import base64
 from utils.logmailer import MailThisLogFile
 from utils.dictfile import readDictFile
-from utils.fam_ire import compose_odm
+from utils.fam_est import compose_odm
 from utils.limesurveyrc2api import LimeSurveyRemoteControl2API
 from utils.ocwebservices import dataWS
 from utils.pg_api import ConnToOliDB, PGSubject
@@ -58,7 +58,7 @@ def cycle_through_syncs():
                 if (one_response_data['lastpage'] != 0):
                     # get the response_id, for administrative purposes
                     response_id = one_response_data['id']
-                    #print(sid, one_response_data)
+                    print(sid, one_response_data)
                 
                     # check if this combination sid-response-id already exists and if not, add it
                     conn.TryToAddSubjectToDB(sid, response_id)
