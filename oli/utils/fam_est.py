@@ -182,8 +182,8 @@ def compose_odm(study_subject_oid, data_ls):
     _odm_data = _odm_data + write_odm_line('I_EEFAM_YOUHEIGHT', data_ls['q25youheight'], is_integer = True)
     _odm_data = _odm_data + write_odm_line('I_EEFAM_YOUWEIGHT', data_ls['q25youweight'])
     
-    _odm_data = _odm_data + write_odm_line('I_EEFAM_YOUAGE', data_ls['q25youage'])
-    _odm_data = _odm_data + write_odm_line('I_EEFAM_SPOUSEAGE', data_ls['q25spouseage'])
+    _odm_data = _odm_data + write_odm_line('I_EEFAM_YOUAGE', data_ls['q25youage'], is_integer = True)
+    _odm_data = _odm_data + write_odm_line('I_EEFAM_SPOUSEAGE', data_ls['q25spouseage'], is_integer = True)
 
     _odm_data = _odm_data + write_odm_line('I_EEFAM_HMNRBROTHER', data_ls['q26hmnr[Brother]'], is_integer = True)
     _odm_data = _odm_data + write_odm_line('I_EEFAM_HMNRELSE', data_ls['q26hmnr[Else]'], is_integer = True)
