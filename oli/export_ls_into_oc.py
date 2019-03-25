@@ -58,7 +58,7 @@ def cycle_through_syncs():
                 if (one_response_data['lastpage'] != 0):
                     # get the response_id, for administrative purposes
                     response_id = one_response_data['id']
-                    print(sid, one_response_data)
+                    # print(sid, one_response_data)
                 
                     # check if this combination sid-response-id already exists and if not, add it
                     conn.TryToAddSubjectToDB(sid, response_id)
