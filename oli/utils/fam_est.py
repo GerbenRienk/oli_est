@@ -187,7 +187,7 @@ def compose_odm(study_subject_oid, data_ls):
 
     _odm_data = _odm_data + write_odm_line('I_EEFAM_HMNRBROTHER', data_ls['q26hmnr[Brother]'], is_integer = True)
     _odm_data = _odm_data + write_odm_line('I_EEFAM_HMNRELSE', data_ls['q26hmnr[Else]'], is_integer = True)
-    _odm_data = _odm_data + write_odm_line('I_EEFAM_HMNRELSESPEC', data_ls['q26hmnrelsespec'])
+    _odm_data = _odm_data + write_odm_line('I_EEFAM_HMNRELSESPEC', data_ls['q26hmnrelsespec'], is_utf8 = True)
     _odm_data = _odm_data + write_odm_line('I_EEFAM_HMNRFATHER', data_ls['q26hmnr[Father]'], is_integer = True)
     _odm_data = _odm_data + write_odm_line('I_EEFAM_HMNRFOSTER', data_ls['q26hmnr[Foster]'], is_integer = True)
     _odm_data = _odm_data + write_odm_line('I_EEFAM_HMNRGRANDFATHER', data_ls['q26hmnr[Grandfather]'], is_integer = True)
