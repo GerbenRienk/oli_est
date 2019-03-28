@@ -100,7 +100,7 @@ class dataWS(object):
         body = body + '  </soapenv:Body>'
         body = body + '</soapenv:Envelope>'
         
-        xml_as_string = requests.post(_dataWsUrl,data=body,headers=headers).content.decode('utf-8')
+        xml_as_string = requests.post(_dataWsUrl,data=body.encode('utf-8'),headers=headers).content.decode('utf-8')
         #print('what we got from the web service')
         #print(xml_as_string)
         tree = etree.fromstring(xml_as_string)
