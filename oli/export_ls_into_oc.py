@@ -109,7 +109,6 @@ def cycle_through_syncs():
                             # if this wasn't done before, so look at date_completed
                             if(conn.DLookup('date_completed', 'ls_responses', 'sid=%i and response_id=%i' % (sid, response_id)) is None):
                                 ws_request = compose_odm(study_subject_oid, one_response_data)
-                                print(ws_request)
                                 conn.WriteDataWSRequest(sid, response_id, ws_request)
                                 import_result = myDataWS.importData(ws_request)
                                 conn.WriteDataWSResponse(sid, response_id, import_result)
