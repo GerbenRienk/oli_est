@@ -1,5 +1,3 @@
-
-
 def write_odm_line( oc_item_name, ls_item_value, is_date=False, is_time=False, is_decimal=False, is_integer=False, is_utf8 = False):
     _one_line = ''
     if (ls_item_value):
@@ -72,7 +70,7 @@ def compose_odm(study_subject_oid, data_ls):
     _odm_data = _odm_data + '    <SubjectData SubjectKey="' + study_subject_oid + '">'
     _odm_data = _odm_data + '      <StudyEventData StudyEventOID="SE_EST_CP">'
     _odm_data = _odm_data + '        <FormData FormOID="F_EEFAMILYFORM_V4">'
-    _odm_data = _odm_data + '          <ItemGroupData ItemGroupOID="IG_PTFAM_UNGROUPED" ItemGroupRepeatKey="1" TransactionType="Insert">'
+    _odm_data = _odm_data + '          <ItemGroupData ItemGroupOID="IG_EEFAM_UNGROUPED" ItemGroupRepeatKey="1" TransactionType="Insert">'
     # data
     _odm_data = _odm_data + write_odm_line('I_EEFAM_RELATIONSHIP', data_ls['q1relationship'])
     _odm_data = _odm_data + write_odm_line('I_EEFAM_RELATIONSHIPOTH', data_ls['q1relationshipother'], is_utf8 = True)
