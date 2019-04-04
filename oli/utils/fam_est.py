@@ -7,9 +7,12 @@ def write_odm_line( oc_item_name, ls_item_value, is_date=False, is_time=False, i
         if (is_date):
             _this_value = ls_item_value[0:10]
         if (is_time):
-            # time field: for now we do nothing with it
-            _this_value = _this_value
-            
+            # time field: check separator
+            _this_value = _this_value.replace('.',':')
+            _this_value = _this_value.replace(';',':')
+            # if the length is 4, then try adding a zero
+            if (len(_this_value) == 4):
+                _this_value = '0' + _this_value
         if (is_decimal):
             _this_value = str(ls_item_value)
         if (is_integer):
