@@ -10,6 +10,7 @@ def write_odm_line( oc_item_name, ls_item_value, is_date=False, is_time=False, i
             # time field: check separator
             _this_value = _this_value.replace('.',':')
             _this_value = _this_value.replace(';',':')
+            _this_value = _this_value.replace(',',':')
             # if the length is 4, then try adding a zero
             if (len(_this_value) == 4):
                 _this_value = '0' + _this_value
