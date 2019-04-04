@@ -189,7 +189,7 @@ class _Tokens(object):
             ('sSessionKey', session_key),
             ('iSurveyID', survey_id),
             ('iStart', 0),
-            ('iLimit', 14000),
+            ('iLimit', 20000),
             ('bUnused', False),
             ('aAttributes', ('attributes_bit'))
         ])
