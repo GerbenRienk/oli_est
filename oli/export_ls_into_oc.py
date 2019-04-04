@@ -120,6 +120,7 @@ def cycle_through_syncs():
                                     if (item_starts_at == -1):
                                         my_report.append_to_report('ERROR: import for %s failed with message "%s"' % (study_subject_id, import_result))
                                     else:
+                                        import_result=import_result.encode("utf-8")
                                         my_report.append_to_report('ERROR: import for %s failed with message "%s" and more' % (study_subject_id, import_result[item_starts_at:]))
                                     
             # move on with the next response 
