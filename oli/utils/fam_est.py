@@ -111,8 +111,8 @@ def compose_odm(study_subject_oid, data_ls):
     _odm_data = _odm_data + write_odm_line('I_EEFAM_SPORTCLUB', data_ls['q12sportclubs'])
     _odm_data = _odm_data + write_odm_line('I_EEFAM_SPORTCLUBFREQ', data_ls['q13sportclubsfrequen'])
     
-    _odm_data = _odm_data + write_odm_line('I_EEFAM_BEDTIME', data_ls['q14bedtime'])
-    _odm_data = _odm_data + write_odm_line('I_EEFAM_WAKEUPTIME', data_ls['q15wakeuptime'])
+    _odm_data = _odm_data + write_odm_line('I_EEFAM_BEDTIME', data_ls['q14bedtime'], is_time = True)
+    _odm_data = _odm_data + write_odm_line('I_EEFAM_WAKEUPTIME', data_ls['q15wakeuptime'], is_time = True)
     _odm_data = _odm_data + write_odm_line('I_EEFAM_WDSPLAYINGACTIVE', data_ls['q16playoutweekdays'])
     _odm_data = _odm_data + write_odm_line('I_EEFAM_WEPLAYINGACTIVE', data_ls['q16playouteweekdays'])
     
