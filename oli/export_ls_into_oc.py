@@ -34,14 +34,17 @@ def cycle_through_syncs():
     
     #start the cycling here
     while True:
-        # get the responses as a list
-        tokens_list = read_ls_tokens(config)
         # now we want to transfer the token - study subject id into a dict
         tokens={}
+        # get the tokens in two parts, each of 10.000
+        tokens_list = read_ls_tokens(config, 0, 10000)
+        for token in tokens_list:
+            tokens[token['token']]=token['participant_info']['firstname']
+        tokens_list = read_ls_tokens(config, 10000, 10000)
         for token in tokens_list:
             tokens[token['token']]=token['participant_info']['firstname']
 
-        #print (tokens)
+        print (tokens)
         # now we have the dict, we can reset the list
         tokens_list=[]
 
@@ -161,7 +164,7 @@ def read_ls_responses(config):
     responses_dict = json.loads(responses_b64)   #this is a dictionary
     return responses_dict['responses']
 
-def read_ls_tokens(config):
+def read_ls_tokens(config, start=0, limit=10000 ):
     """
     function to use the ls api and read all tokens into a dictionary
     parameters
@@ -175,7 +178,7 @@ def read_ls_tokens(config):
     session_req = api.sessions.get_session_key(config['lsUser'], config['lsPassword'])
     session_key = session_req.get('result')
     # now get all responses of our survey
-    tokens = api.tokens.list_participants(session_key, sid)
+    tokens = api.tokens.list_participants(session_key, sid, start, limit)
     return tokens['result']
     
 if __name__ == '__main__':

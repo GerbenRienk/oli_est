@@ -167,7 +167,7 @@ class _Tokens(object):
         response = self.api.utils.request(data)
         return response
 
-    def list_participants(self, session_key, survey_id):
+    def list_participants(self, session_key, survey_id, start=0, limit=10000):
         """
         List participants of the specified survey.
         * @access public
@@ -188,8 +188,8 @@ class _Tokens(object):
         params = OrderedDict([
             ('sSessionKey', session_key),
             ('iSurveyID', survey_id),
-            ('iStart', 0),
-            ('iLimit', 16000),
+            ('iStart', start),
+            ('iLimit', limit),
             ('bUnused', False),
             ('aAttributes', ('attributes_bit'))
         ])
