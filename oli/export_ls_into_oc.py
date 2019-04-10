@@ -44,7 +44,6 @@ def cycle_through_syncs():
         for token in tokens_list:
             tokens[token['token']]=token['participant_info']['firstname']
 
-        print (tokens)
         # now we have the dict, we can reset the list
         tokens_list=[]
 
@@ -82,6 +81,8 @@ def cycle_through_syncs():
                         else:
                             my_report.append_to_report('ERROR: No study subject id for token %s' % this_token )
                             #print(study_subject_id)
+                        if (study_subject_id is None):
+                            study_subject_id = ''
                         
                         if (len(study_subject_id) != 13):
                             # write this to error report 
