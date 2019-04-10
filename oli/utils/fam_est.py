@@ -6,6 +6,7 @@ def write_odm_line( oc_item_name, ls_item_value, is_date=False, is_time=False, i
             _this_value = ls_item_value[0:10]
         if (is_time):
             # time field: check separator
+            _this_value = _this_value.strip()
             _this_value = _this_value.replace('.',':')
             _this_value = _this_value.replace(';',':')
             _this_value = _this_value.replace(',',':')
